@@ -12,7 +12,7 @@
 ###Objectives
 The purpose of this project is to allow users to manage a blog.
 
-* Store blog posts in a session 
+* Store blog posts in a database
 * Create Blog posts using an admin system
 * View Blog posts in a front end and printed out in EJS
 * Be able to delete blog posts from the admin system
