@@ -20,7 +20,6 @@ router.route('/admin/:id')
     .put(adminController.updatePost)
     .delete(adminController.deletePost);
 
-
 router.route('/:id/edit')
     .get(adminController.editPost)
 

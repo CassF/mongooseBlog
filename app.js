@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const layouts = require('express-ejs-layouts');
 const session = require("express-session");
+const methodOverride = require('method-override');
 const mongoose = require('mongoose'); 
 
 //These are my own modules that require a relative path to find them
@@ -13,6 +14,16 @@ const app = express();
 
 //connect to the database
 mongoose.connect('mongodb://localhost/blogs');
+
+// method override
+app.use(methodOverride(function(req, res){
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method
+  }
+}));
 
 //View Engine
 app.set('view engine', 'ejs');
