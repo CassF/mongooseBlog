@@ -4,6 +4,22 @@
 
 <p><%= blog.body %></p>
 
+
+<h2> Comments </h2>
+<% for(let i = 0; i < blog.comments.length; i++ ) { %>
+    <div>
+        <h2>
+            <a>
+                <%= blog.comments[i].subject %>
+            </a>
+        </h2>
+        <p>
+            <%= blog.comments[i].comment %>
+        </p>
+    </div>
+    <% } %>
+
+
 <a href="/<%= blog.id %>/edit">edit</a>
 
 

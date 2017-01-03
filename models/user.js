@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 //creates a new schema
 let UserSchema = mongoose.Schema({
+    username: String,
+    password: String,
+    name: String,
     admin: Boolean
 });
 

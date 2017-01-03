@@ -1,4 +1,34 @@
-<h1 class ="title">Scribbl</h1>
-<h2><%= blog.title %></h2>
+<h1 class="title">Scribbl</h1>
+<h2>
+    <%= blog.title %>
+</h2>
 
-<p><%= blog.body %></p>
+<p>
+    <%= blog.body %>
+</p>
+
+
+<h2> Comments </h2>
+<% for(let i = 0; i < blog.comments.length; i++ ) { %>
+    <div>
+        <h2>
+            <a>
+                <%= blog.comments[i].subject %>
+            </a>
+        </h2>
+        <p>
+            <%= blog.comments[i].comment %>
+        </p>
+    </div>
+    <% } %>
+
+        <h2> Add Comment </h2>
+        <!-- COMMENTS -->
+        <form action="/<%= blog.id %>" method="POST">
+            <input type="text" name="subject" placeholder="Enter a title">
+            <textarea name="comment"></textarea>
+            <input type="submit" value="Save Post">
+            <% if(blog.id != "") { %>
+                <input type="hidden" name="_method" value="PUT">
+                <% } %>
+        </form>

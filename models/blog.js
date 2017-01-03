@@ -3,7 +3,14 @@ const mongoose = require('mongoose');
 //creates a new schema
 let BlogSchema = mongoose.Schema({
     title: String,
-    body: String
+    body: String,
+    comments: [
+        {
+            subject: String, 
+            comment: String,
+            "_id": false
+        }
+    ]
 });
 
 //tell mongoose to create a real model from our schema and export it

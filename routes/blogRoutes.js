@@ -8,7 +8,13 @@ const blogController = require("../controllers/blogController");
 //We are calling two functions on router in this case they are both .get(), which is the HTTP verb, and that takes 2 arguments.
 //1 is the path (from the url), the 2nd is the function to call
 router.get("/", blogController.indexPost);
-router.get("/:id", blogController.showPost);
+
+router.route("/:id")
+    .get(blogController.showPost)
+    .put(blogController.addComment);
+
+
+
 // router.post("/", blogController.addComment);
 
 
