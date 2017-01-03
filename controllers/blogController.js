@@ -1,8 +1,9 @@
 const Blog = require("../models/blog");
 // const Comments = require("../models/comment")
 
+class BlogController {
 // INDEX - GET /
-function indexPost(req, res) {
+static indexPost(req, res) {
 
   Blog.find({}, function (err, blogs) {
 
@@ -17,7 +18,7 @@ function indexPost(req, res) {
 }
 
 // SHOW - GET /:id
-function showPost(req, res) {
+static showPost(req, res) {
 
   Blog.findById(req.params.id, function (err, blog) {
 
@@ -33,13 +34,8 @@ function showPost(req, res) {
 
 }
 
-
+}
 
 //Exporting the BlogController class
 // export all our controller functions in an object
-module.exports = {
-
-  index: indexPost,
-  show: showPost
-
-}
+module.exports = BlogController;
