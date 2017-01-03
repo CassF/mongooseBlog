@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const layouts = require('express-ejs-layouts');
 const session = require("express-session");
 const mongoose = require('mongoose'); 
 
@@ -20,7 +21,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
-// app.use(layouts);
+app.use(layouts);
 
 //Routes
 app.use(adminRoutes);
