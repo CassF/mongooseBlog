@@ -1,0 +1,12 @@
+<h1>Edit Post</h1>
+
+<form action="/<%= blog.id %>" method="POST">
+  <input type="text" name="title" placeholder="Enter a title" value="<%= blog.title %>">
+  <textarea name="body"><%= blog.body %></textarea>
+  <input type="submit" value="Save Post">
+  <% if(blog.id != "") { %>
+  <input type="hidden" name="_method" value="PUT">
+  <% } %>
+</form>
+
+

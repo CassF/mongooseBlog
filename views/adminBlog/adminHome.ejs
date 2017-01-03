@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="css/materialize.css">
+    <!-- Import animate css -->
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <!-- Import my custom index stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- Start of header -->
+    <header>
+        <div class="row">
+            <a href="/admin"><i class="fa fa-user-circle-o fa-3x"></i></a>
+        </div>
+    </header>
+    <!-- End of header -->
+    <!-- Start of banner -->
+    <h1 role="title" class="title">Scribbl</h1>
+    <!-- End of banner -->
+
+    <!-- VIEW ALL BLOGS -->
+
+    <% for(let i = 0; i < blogs.length; i++ ) { %>
+        <div>
+            <h2>
+                <a href="/admin/<%= blogs[i].id %>">
+                    <%= blogs[i].title %>
+                </a>
+            </h2>
+            <p class="bcontent">
+                <%= blogs[i].body %>
+            </p>
+        </div>
+        <% } %>
+
+
+            <!-- NEW POST -->
+
+     
+
+            <a href="/new"><h1>New Post</h1></a>
+
+                <!-- Input Footer Template -->
+                <% include ../partials/footer %>
+                    <!--Import jQuery then materialize.js-->
+                    <script src="js/jquery-3.1.1.min.js"></script>
+                    <script src="js/materialize.js"></script>
+                    <!-- Import CSS animation script -->
+                    <script src="js/css3-animate-it.js"></script>
+                    <!-- Import Font Awesome script -->
+                    <script src="https://use.fontawesome.com/add6c7c4be.js"></script>
+</body>
+
+</html>
