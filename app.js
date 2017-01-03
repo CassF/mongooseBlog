@@ -15,16 +15,6 @@ const app = express();
 //connect to the database
 mongoose.connect('mongodb://localhost/blogs');
 
-// method override
-app.use(methodOverride(function(req, res){
-  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-    // look in urlencoded POST bodies and delete it
-    var method = req.body._method
-    delete req.body._method
-    return method
-  }
-}));
-
 //View Engine
 app.set('view engine', 'ejs');
 
@@ -33,6 +23,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(layouts);
+
+// method override
+app.use(methodOverride(function(req, res){
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    let method = req.body._method
+    delete req.body._method
+    return method
+  }
+}));
 
 //Routes
 app.use(adminRoutes);

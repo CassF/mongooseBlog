@@ -7,9 +7,8 @@
 <a href="/<%= blog.id %>/edit">edit</a>
 
 
-<form action="/<%= blog.id %>" method="POST">
+<form action="/admin/<%= blog.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete">
 </form> 
-
 
