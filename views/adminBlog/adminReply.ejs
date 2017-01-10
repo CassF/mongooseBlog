@@ -1,0 +1,9 @@
+        <h2> Add Comment </h2>
+        <!-- COMMENTS -->
+        <form action="/<%= blog.id %>" method="POST">
+            <textarea name="reply"></textarea>
+            <input type="submit" value="Save Post">
+            <% if(blog.id != "") { %>
+                <input type="hidden" name="_method" value="PUT">
+                <% } %>
+        </form>

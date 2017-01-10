@@ -9,6 +9,12 @@ let BlogSchema = mongoose.Schema({
             subject: String, 
             comment: String,
             "_id": false
+            // adminReply: [
+            //     {
+            //     "_id": false,
+            //     reply: String
+            //     }
+            // ]
         }
     ]
 });

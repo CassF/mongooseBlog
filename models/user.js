@@ -1,11 +1,24 @@
 const mongoose = require('mongoose');
 
-//creates a new schema
+// create a new schema
 let UserSchema = mongoose.Schema({
-    username: String,
-    password: String,
-    name: String,
-    admin: Boolean
+  firstName: { 
+    type: String, 
+    required: true
+  },
+    lastName: { 
+    type: String, 
+    required: true
+  },
+    email: { 
+    type: String, 
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String, 
+    required: true,
+  }
 });
 
 //tell mongoose to create a real model from our schema and export it
